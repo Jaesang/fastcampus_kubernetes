@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: prepare-etcd-secret
+spec:
+  template:
+    metadata:
+      name: prepare-etcd-secret
+    spec:
+      serviceAccountName: prepare-etcd-secret
+      containers:
+        - name: hyperkube
+          image: "k8s.gcr.io/hyperkube:v1.18.8"
+          imagePullPolicy: IfNotPresent
+          command:
+            - /bin/bash
+            - -c
+            - |-
+              kubectl create secret generic etcd-client-cert

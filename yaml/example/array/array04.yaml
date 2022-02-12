@@ -1,0 +1,16 @@
+---
+Albums:
+  - name: THE STORY BEGINS
+    Title: "OOH-AHH하게"
+    Songs:
+      - name: "OOH-AHH하게"
+        writer: "BEP"
+      - name: "다시 해줘"
+        writer: "JYP"
+  - name: PAGE TWO
+    Title: "CHEER UP"
+    Songs:
+      - name: "CHEER UP"
+        writer: "Sam Lewis"
+      - name: "소중한 사랑"
+        writer: "JYP"

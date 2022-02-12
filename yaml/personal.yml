@@ -1,0 +1,14 @@
+Name: Gildong
+Age: 30
+Favorites:
+  Food: Steak
+  Musician: "The Weeknd"
+Jobs:
+  - Title: Artist
+    Experience: 10
+  - Title: Teacher
+    Experience: 4
+Dislikes:
+  - Talk
+  - Travel
+  - Smoking

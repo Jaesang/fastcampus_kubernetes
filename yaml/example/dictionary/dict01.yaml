@@ -1,0 +1,8 @@
+---
+Name: Gildong # Key는 String, Value는 String, Number, Dictionary
+Age: 30
+Favorites:
+  Food: Steak
+  Musician: "The Weeknd"
+---
+{Name: Gildong, Age: 30, Favorites: {Food: Steak, Musician: The Weeknd}}

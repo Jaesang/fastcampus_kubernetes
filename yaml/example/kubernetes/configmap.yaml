@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-datasource
+  namespace: lma
+  labels:
+    grafana_datasource: "1"
+    app: grafana
+data:
+  datasource.yaml: |-
+    apiVersion: 1
+    datasources:
+    - name: Prometheus
+      type: prometheus
+      url: http://localhost:9090
+      access: proxy
+      isDefault: true
+    - name: Loki
+      type: loki
+      url: http://localhost:3100
+      access: proxy
