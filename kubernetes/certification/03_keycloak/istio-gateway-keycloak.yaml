@@ -1,0 +1,31 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: keycloak-gateway-tls
+spec:
+  selector:
+    istio: ingressgateway # use Istio default gateway implementation
+  servers:
+  - port:
+      number: 443
+      name: https
+      protocol: HTTPS
+    hosts:
+    - "keycloak.34.64.78.98.nip.io"
+    tls:
+      credentialName: keycloak-cert-prd
+      mode: SIMPLE
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: keycloak-ingress
+spec:
+  hosts:
+  - "keycloak.34.64.78.98.nip.io"
+  gateways:
+  - keycloak-gateway-tls
+  http:
+  - route:
+    - destination:
+        host: keycloak

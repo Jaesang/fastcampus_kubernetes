@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: keycloak-cert
+  namespace: istio-system
+spec:
+  secretName: keycloak-cert
+  commonName: keycloak.34.64.78.98.nip.io 
+  dnsNames:
+  - keycloak.34.64.78.98.nip.io
+  issuerRef:
+    name: letsencrypt-staging
+    kind: ClusterIssuer
