@@ -1,0 +1,25 @@
+[req]
+req_extensions = v3_req
+distinguished_name = req_distinguished_name
+[req_distinguished_name]
+[v3_req]
+keyUsage=critical, digitalSignature, keyEncipherment
+extendedKeyUsage=serverAuth
+subjectAltName = @alt_names
+[alt_names]
+DNS.1 = controller-0
+DNS.2 = kubernetes
+DNS.3 = kubernetes.default
+DNS.4 = kubernetes.default.svc
+DNS.5 = kubernetes.default.svc.cluster.local
+DNS.6 = lb-apiserver.kubernetes.local
+DNS.7 = localhost
+DNS.8 = controller-1
+DNS.9 = controller-2
+ 
+IP.1 = 10.32.0.1 ### k8s 환경의 service address 대역으로 맞추어야 한다!
+IP.2 = 127.0.0.1
+IP.3 = 10.240.0.11    # controller-0
+IP.4 = 10.240.0.12    # controller-1
+IP.5 = 10.240.0.13    # controller-2
+IP.6 = 34.64.121.243  # vip
