@@ -7,8 +7,7 @@ istio로 관리하는 서비스를 외부에서 사용하기 위해서는 외부
 `istio-gateway`는 `istioctl`을 통해 직접 설치, 혹은 `helm` 차트를 통해 `helm`으로 관리할 수 있습니다.
 
 ## `istioctl`을 통해 설치하기
-`istioctl`은 install 명령을 통해 istio controlplane을 설치하는데 이 때 사용하는 다양한 config profile을 제공합니다. (프로필의 대한 설명은 공식 [문서](https://istio.io/latest/docs/setup/additional-setup/config-profiles/)에서 확인할 수 있습니다.)
-프로필 중 `demo`프로필에서 `istio-gateway`를 설치를 지원하기 때문에 설치 시 해당 프로필을 추가해줍니다. `istioctl install`은 `istio-gateway`만 독립해서 설치하는 것은 지원하지 않습니다.
+
 ```
 istioctl install --set profile=demo
 kubectl get po -n istio-system
